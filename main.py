@@ -4,6 +4,7 @@ import sys
 
 
 from aiogram import Dispatcher
+from aiogram.fsm.storage.memory import MemoryStorage
 
 from filters.admin_filter import AdminFilter
 from handlers import routers_list
@@ -16,10 +17,10 @@ dp = Dispatcher()
 dp.include_routers(*routers_list)
 
 dp.message.filter(AdminFilter())
+# dp = Dispatcher(storage=MemoryStorage())
 
 async def main() -> None:
     await set_bot_commands()
-
     await dp.start_polling(bot)
 
 

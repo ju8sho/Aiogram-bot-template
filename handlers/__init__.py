@@ -1,8 +1,15 @@
-from handlers.user.handlers import handler_routers
+from handlers.user.user_handler import admin_router
+from handlers.user.start_help_handler import star_help_routers
+from handlers.user.buyurtmalar_adminga_yuborish import buyurtma_olish_router
+from handlers.user.echo_handler import echo_router
+
 
 
 routers_list = [
-    handler_routers
+    admin_router,
+    star_help_routers,
+    buyurtma_olish_router,
+    echo_router,  # Add more handlers here if needed!
 ]
 
 __all__ = [
