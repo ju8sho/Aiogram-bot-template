@@ -1,8 +1,6 @@
 import asyncio
 import logging
 import sys
-
-
 from aiogram import Dispatcher
 
 from filters.admin_filter import AdminFilter
@@ -11,14 +9,12 @@ from bot_params import bot
 from commands import set_bot_commands
 
 
-# All handlers should be attached to the Router (or Dispatcher)
-dp = Dispatcher()
-dp.include_routers(*routers_list)
-
-dp.message.filter(AdminFilter())
-
 async def main() -> None:
     await set_bot_commands()
+
+    dp = Dispatcher()
+    dp.include_routers(*routers_list)
+    # dp.message.filter(AdminFilter())
 
     await dp.start_polling(bot)
 
