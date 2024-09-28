@@ -14,8 +14,8 @@ buyurtma_olish_router = Router()
 async def buyurtma_olish_handler(message: Message, state: FSMContext):
     # Foydalanuvchidan buyurtma matnini so'raymiz
     text = (
-        f"{hd.bold('Buyurtmangizni yozing:')}\n"
-        f"{hd.code('Misol uchun:\n1kg go\'sht kerak, suvagi va yog\'i ko\'proq bo\'lsin, Palonchi ko\'chasi, palonchi uy')}"
+        f"{'Buyurtmangizni yozing:'}\n"
+        f"{'Misol uchun:\n1kg go\'sht kerak, suvagi va yog\'i ko\'proq bo\'lsin, Palonchi ko\'chasi, palonchi uy'}"
     )
 
     await message.answer(text, parse_mode="HTML")
@@ -41,8 +41,8 @@ async def buyurtma_matni_qabul_qilish(message: Message, state: FSMContext):
 
     admin_message = (
         f"{hd.bold('Yangi buyurtma!')}\n\n"
-        f"{hd.italic('Foydalanuvchi:')} {user_link}\n"
-        f"{hd.bold('Buyurtma matni:')}\n{hd.pre(buyurtma_matni)}"
+        f"{'Foydalanuvchi:'} {user_link}\n"
+        f"{'Buyurtma matni:'}\n{buyurtma_matni}"
     )
 
     # Adminlarga xabar yuboramiz
@@ -57,7 +57,7 @@ async def buyurtma_matni_qabul_qilish(message: Message, state: FSMContext):
 
     await message.answer(
         f"{hd.bold('Buyurtmangiz qabul qilindi.')}\n"
-        f"{hd.italic('Admin siz bilan bog\'lanadi!')}",
+        f"{'Admin siz bilan bog\'lanadi!'}",
         parse_mode="HTML"
     )
     await state.clear()  # State ni tozalaymiz

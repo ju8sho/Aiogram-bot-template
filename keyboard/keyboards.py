@@ -7,4 +7,14 @@ main_keyboard = ReplyKeyboardMarkup(
     ],
     resize_keyboard=True
 )
+# bu admin uchun kinopkalar
+admin_keyboard = ReplyKeyboardMarkup(
+    keyboard=[
+        [KeyboardButton(text="Mahsulot qo'shish")],
+        [KeyboardButton(text="Mahsulot o'chirish")],
+        [KeyboardButton(text="Mahsulotlar")],
+        [KeyboardButton(text="Clear cache")],
+    ],
+    resize_keyboard=True
+)
 ######################
